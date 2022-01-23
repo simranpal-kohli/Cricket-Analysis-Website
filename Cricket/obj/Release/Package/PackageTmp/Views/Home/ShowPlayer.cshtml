@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Cricket.Models.ShowPartialPlayer> 
+
+<div class="jumbotron">
+<h3><b>@ViewBag.PlayerName : @ViewBag.CategoryName</b></h3>
+    <table class="table table-bordered">
+        <tr>
+            @if(ViewBag.CategoryId==1 || ViewBag.CategoryId==4)
+            {
+            <th>@Html.DisplayNameFor(model => model.PlayerRun)</th>
+            }
+            else if(ViewBag.CategoryId==3)
+            {
+            <th>@Html.DisplayNameFor(model => model.PlayerWickets)</th>
+            }
+            else
+            {
+            <th>@Html.DisplayNameFor(model => model.PlayerRun)</th>
+            <th>@Html.DisplayNameFor(model => model.PlayerWickets)</th>
+            }
+            <th>@Html.DisplayNameFor(model => model.TeamName)</th>
+            </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                @if(item.CategoryId==1 || item.CategoryId==4)
+                {
+                <td>@Html.DisplayFor(model => item.PlayerRun)</td>
+                }
+                else if(item.CategoryId==3)
+                {
+                <td>@Html.DisplayFor(model => item.PlayerWickets)</td>
+                }
+                else
+                {
+                <td>@Html.DisplayFor(model => item.PlayerRun)</td>
+                <td>@Html.DisplayFor(model => item.PlayerWickets)</td>
+                }
+                <td>@Html.DisplayFor(model=>item.TeamName)</td>
+            </tr>
+        }
+
+    </table>
+    </div>
+
+

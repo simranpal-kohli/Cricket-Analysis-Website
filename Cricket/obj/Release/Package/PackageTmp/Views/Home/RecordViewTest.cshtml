@@ -1,0 +1,136 @@
+﻿@model Cricket.Models.MatchPlayerRecordDisplay
+
+@{
+    ViewBag.Title = "RecordViewTest";
+}
+
+
+<table border="1" width=430 style="display: inline-block; border: 1px solid; 
+float: left; tab-size:initial; margin-top:50px; margin-left:30px;">
+    <thead>
+    <tr height="50" >
+        <th rowspan="2" width="150" >PlayerName</th>
+       @foreach(var matchdetail in Model.MatchDetailModel)
+       {
+           if(matchdetail.MatchId==ViewBag.matchids[0])
+           {
+               <th colspan="5">
+        Vs: @matchdetail.TeamBName | Venue: @matchdetail.Venue | <br>Date: @matchdetail.MatchDate.ToShortDateString() 
+               </th>
+           }
+
+       }
+    </tr>
+    <tr>
+        <th width="60">Runs</th>
+        <th width="60">SR</th>
+        <th width="60">Wickets</th>
+        <th width="60">ER</th>
+        <th width="60">Overs</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PlyerInfoModel)
+            {
+            <tr>
+                <td> @Html.DisplayFor(model => item.PlayerName)</td>
+                @foreach (var inneritem in Model.PlayerDetailModel)
+                {
+                    if (item.PlayerId == inneritem.PlayerId && inneritem.MatchId==ViewBag.matchids[0])
+                    {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerRun)</td>
+                            <td>@Html.DisplayFor(model => inneritem.SR)</td>
+                        if (inneritem.CategoryId == 2 || inneritem.CategoryId == 3)
+                        {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerWickets)</td>
+                            <td>@Html.DisplayFor(model => inneritem.ER)</td>
+                            <td>@Html.DisplayFor(model => inneritem.Overs) </td>
+                        }
+                        else
+                        {
+                            @*<td>@Html.Display("NA")</td>
+                            <td>@Html.Display("NA")</td>
+                            <td>@Html.Display("NA") </td>*@
+                            <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        }
+                    }
+                }
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
+@for (int j = 1; j < (ViewBag.matchids.Count); j++)
+{
+    
+<table border="1" width="304" style="display: inline-block; border: 1px solid; tab-size:initial; margin-top:50px; float:left;  ">
+    <thead>
+        <tr height="50">
+            
+            @foreach (var matchdetail in Model.MatchDetailModel)
+            {
+                if (matchdetail.MatchId == ViewBag.matchids[j])
+                {
+                    <th colspan="5">
+                        Vs: @matchdetail.TeamBName | Venue: @matchdetail.Venue | <br>Date: @matchdetail.MatchDate.ToShortDateString()
+                    </th>
+                }
+
+            }
+
+        </tr>
+        <tr>
+            <th width="60">Runs</th>
+            <th width="60">SR</th>
+            <th width="60">Wickets</th>
+            <th width="60">ER</th>
+            <th width="60">Overs</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PlyerInfoModel)
+        {
+            <tr>
+                @*<td> @Html.DisplayFor(model => item.PlayerName)</td>*@
+                @foreach (var inneritem in Model.PlayerDetailModel)
+                {
+                    if (item.PlayerId == inneritem.PlayerId && inneritem.MatchId == ViewBag.matchids[j])
+                    {
+
+                        <td>@Html.DisplayFor(model => inneritem.PlayerRun)</td>
+                        <td>@Html.DisplayFor(model => inneritem.SR)</td>
+                        if (inneritem.CategoryId == 2 || inneritem.CategoryId == 3)
+                        {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerWickets)</td>
+                            <td>@Html.DisplayFor(model => inneritem.ER)</td>
+                            <td>@Html.DisplayFor(model => inneritem.Overs) </td>
+                        }
+                        else
+                        {
+                            @*<td>@Html.Display("NA")</td>
+                              <td>@Html.Display("NA")</td>
+                              <td>@Html.Display("NA") </td>*@
+                            <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        }
+                    }
+                }
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+}
+
+
+@*@Html.Action("DetailsTest",)*@
+
+
+
+

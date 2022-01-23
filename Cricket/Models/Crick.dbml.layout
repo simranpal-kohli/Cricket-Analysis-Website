@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Crick">
+  <DataContextMoniker Name="/CrickDataContext" />
+  <nestedChildShapes>
+    <classShape Id="17df7ece-60ce-4d77-90b2-82667931c9d7" absoluteBounds="3.625, 0.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/CrickDataContext/PlayerDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a444bc6d-7950-416a-a767-0dc860be7f6d" absoluteBounds="3.64, 1.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc4801f1-2659-4336-a3a0-3ff685d2bba9" absoluteBounds="1.25, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CrickDataContext/MatchDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbaae52c-895e-4d82-9ba6-026187bea49c" absoluteBounds="1.2650000000000001, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 1.66909912109375); (3.625 : 1.66909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/MatchDetail/MatchDetail_PlayerDetail" />
+      <nodes>
+        <classShapeMoniker Id="bc4801f1-2659-4336-a3a0-3ff685d2bba9" />
+        <classShapeMoniker Id="17df7ece-60ce-4d77-90b2-82667931c9d7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7dc1337e-b9d5-4ad6-8bd9-f6959a0075cb" absoluteBounds="5.875, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CrickDataContext/LeagueDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f897f029-e245-492c-91d6-f373466c52db" absoluteBounds="5.89, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 0.65625); (3.25 : 0.65625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/LeagueDetail/LeagueDetail_MatchDetail" />
+      <nodes>
+        <classShapeMoniker Id="7dc1337e-b9d5-4ad6-8bd9-f6959a0075cb" />
+        <classShapeMoniker Id="bc4801f1-2659-4336-a3a0-3ff685d2bba9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1cd7e4c1-3a7d-43d2-932d-20a8fc7b549b" absoluteBounds="0.625, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CrickDataContext/CategoryDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9733255d-d4c4-4398-9e8a-761426060ee0" absoluteBounds="0.64, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.90625 : 1.69399251302083); (0.90625 : 3.03529860677083); (2.16666666666667 : 3.03529860677083 : JumpStart); (2.33333333333333 : 3.03529860677083 : JumpEnd); (2.69791866666667 : 3.03529860677083 : JumpStart); (2.86458533333333 : 3.03529860677083 : JumpEnd); (3.625 : 3.03529860677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/CategoryDetail/CategoryDetail_PlayerDetail" />
+      <nodes>
+        <classShapeMoniker Id="1cd7e4c1-3a7d-43d2-932d-20a8fc7b549b" />
+        <classShapeMoniker Id="17df7ece-60ce-4d77-90b2-82667931c9d7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9b893154-ebb9-4c81-8b1b-6e485fa9f9ec" absoluteBounds="1.25, 3.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CrickDataContext/PlayerInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="408583df-b270-46f9-b254-4473c3e16ce6" absoluteBounds="1.2650000000000001, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 3.625); (3.29175825477987 : 3.62304058814051 : JumpStart); (3.52074174522013 : 3.61229605465462 : JumpEnd); (3.625 : 3.60740397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CrickDataContext/PlayerInfo/PlayerInfo_PlayerDetail" />
+      <nodes>
+        <classShapeMoniker Id="9b893154-ebb9-4c81-8b1b-6e485fa9f9ec" />
+        <classShapeMoniker Id="17df7ece-60ce-4d77-90b2-82667931c9d7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.7343725 : 1.69399251302083); (0.7343725 : 4.51044840494792); (1.25 : 4.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/CategoryDetail/CategoryDetail_PlayerInfo" />
+      <nodes>
+        <classShapeMoniker Id="1cd7e4c1-3a7d-43d2-932d-20a8fc7b549b" />
+        <classShapeMoniker Id="9b893154-ebb9-4c81-8b1b-6e485fa9f9ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.21875 : 1.69399251302083); (7.21875 : 3.8750025); (3.25 : 3.8750025)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/LeagueDetail/LeagueDetail_PlayerInfo" />
+      <nodes>
+        <classShapeMoniker Id="7dc1337e-b9d5-4ad6-8bd9-f6959a0075cb" />
+        <classShapeMoniker Id="9b893154-ebb9-4c81-8b1b-6e485fa9f9ec" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="19a01c61-ce63-4132-adfe-744c9b2fbe19" absoluteBounds="4.5, 4.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CrickDataContext/TeamDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46e50994-7623-4235-9110-de0b22cf7ac1" absoluteBounds="4.515, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 4.81814697265625); (3.5 : 4.81814697265625); (3.5 : 3.85740397135417); (3.375 : 3.85740397135417); (3.375 : 3.375); (2.25 : 3.375); (2.25 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/TeamDetail/TeamDetail_MatchDetail" />
+      <nodes>
+        <classShapeMoniker Id="19a01c61-ce63-4132-adfe-744c9b2fbe19" />
+        <classShapeMoniker Id="bc4801f1-2659-4336-a3a0-3ff685d2bba9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 4.44032148632813); (3.75 : 4.44032148632813); (3.75 : 3.85740397135417); (3.4375 : 3.85740397135417); (3.4375 : 3.375); (2.781252 : 3.375); (2.781252 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/TeamDetail/TeamDetail_MatchDetail1" />
+      <nodes>
+        <classShapeMoniker Id="19a01c61-ce63-4132-adfe-744c9b2fbe19" />
+        <classShapeMoniker Id="bc4801f1-2659-4336-a3a0-3ff685d2bba9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 5.16952189127604); (3.25 : 5.16952189127604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CrickDataContext/TeamDetail/TeamDetail_PlayerInfo" />
+      <nodes>
+        <classShapeMoniker Id="19a01c61-ce63-4132-adfe-744c9b2fbe19" />
+        <classShapeMoniker Id="9b893154-ebb9-4c81-8b1b-6e485fa9f9ec" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

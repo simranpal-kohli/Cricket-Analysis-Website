@@ -1,0 +1,73 @@
+﻿@model Cricket.Models.MatchDetail_PlayerDetail_Model
+
+@{
+    ViewBag.Title = "AddMatch";
+}
+
+<h2>AddMatch</h2>
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+<div class="col-md-10">
+    @Html.DropDownListFor(model => model.SelectedTeamId, new SelectList(Model.TeamCollection, "TeamId", "TeamName"), "opponent Team")
+    @*@Html.ValidationMessageFor(model => model.SelectedTeamId, "", new { @class = "text-danger" }) ||*@
+
+    @Html.LabelFor(model => model.Venue, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.EditorFor(model => Model.Venue, new { htmlAttributes = new { @class = "form-control" } })
+
+</div>
+
+  
+
+<table class="table">
+    <tr>
+
+        <th>Player Name</th>
+        <th>Runs</th>
+        <th>StrikeRate</th>
+        <th>Wickets</th>
+        <th>Overs</th>
+        <th>EconomyRate</th>
+        <th>Review</th>
+    </tr>
+    
+        
+        @for (int i = 0; i < Model.PlayerScoringCollection.Count(); i++)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.PlayerScoringCollection[i].PlayerName)
+                    @Html.HiddenFor(model=>model.PlayerScoringCollection[i].PlayerId)
+                    @Html.HiddenFor(model => model.PlayerScoringCollection[i].CategoryId)
+                </td>
+
+                <td>
+                    @Html.EditorFor(model => model.PlayerScoringCollection[i].PlayerRun, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.ValidationMessageFor(model => item1.PlayerRun, "", new { @class = "text-danger" })*@
+                </td>
+                <td>@Html.EditorFor(model => model.PlayerScoringCollection[i].SR, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>
+                    @Html.EditorFor(model => model.PlayerScoringCollection[i].PlayerWicket, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.PlayerScoringCollection[i].Overs, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.PlayerScoringCollection[i].ER, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+                <td>
+                    @*@Html.EditorFor(model => model.PlayerScoringCollection[i].Review, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.TextAreaFor(model => model.PlayerScoringCollection[i].Review, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+            </tr>
+
+        }
+        <tr><td><input type="submit" value="Add Players Records" class="btn btn-default"></td></tr>
+    
+ 
+</table>
+}
+
+ 
+
+

@@ -1,0 +1,201 @@
+﻿@model Cricket.Models.TestTeamLeagueModel
+
+@{
+    ViewBag.Title = "Cricket Teams";
+}
+
+<h2 id="test1" class="text-center" style="align-content:center; border: 1px solid;" >Cricket Teams</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<p>
+    @using (Html.BeginForm(null,null,FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @*@Html.ValidationSummary();*@
+        @Html.Hidden("SelectedLeague",Model.SelectedLeagueName,new { @id="hiddenid"})
+       
+        @Html.LabelFor(model => model.SelectedLeagueId, new { @class = "primary" })
+        @Html.DropDownListFor(model => model.SelectedLeagueId, new SelectList(Model.LeagueCollection, "LeagueId", "LeagueName",1), "Select League"
+    /*"select",new { @id="selid"})*/
+        @*<input type="submit" value="submit" class="btn-btn-default" />*@
+    , new
+    {
+        title = "Pick Batch",
+        onchange = "submit();",
+        @id = "selid",
+        //@class = "btn btn-default dropdown-toggle"
+        @class = "form-control"
+    });
+        @Html.ValidationMessageFor(model => model.SelectedLeagueId, null, new { @class = "ValidationErrors" })
+
+
+    }
+    @section Scripts {
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#selid").change(function (evt) {
+                $("#SelectedLeague").val($("#selid option:selected").text().trim());
+            });
+
+        });
+
+        //    $("h2").on('hover',function () {
+        //        $(this).addClass("blue");
+        //    });
+
+        //    $(".btn btn-success").on(onclick, function () {
+        //        alert("hey team");
+        //    });
+
+        //    $("#someid").hover(function () {
+        //        $("#divid").html('TeamDetails')
+        //    })
+        //});
+            
+            </script>
+        }
+ </p>
+<table class="table table-striped">
+    <tr>
+       
+        <th>Flag</th>
+        <th>Team Name</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.testteamdetail) {
+    <tr id="bordertest">
+        <td>
+
+            <img id="img-size" src='@Url.Action("Show", "Home", new { id = item.TeamId })' alt="My Image" style="max-width:50px; max-height:50px" />
+
+        </td>
+        <td>
+
+            <span id="TeamNameId">@Html.DisplayFor(modelItem => item.TeamName)</span>
+        </td>
+        @*<td></td>*@
+        <td>
+            @*@Html.ActionLink("Details", "Details", new { id=item.TeamId})*@
+            @Html.ActionLink("Team Details", "DetailsTest", new { id = item.TeamId },
+           new { @class = "btn btn-success",id="someid"+"_"+ item.TeamId,onclick= "somefunction()" }) 
+            @*@Html.Action("Details",new { id=item.TeamId})*@
+        </td>
+    </tr>
+}
+
+</table>
+
+<div id="divid"></div>
+
+
+    @*<script type="text/javascript">
+            $(window).load(function () {
+                $(".btn btn-success").click(function () {
+                    alert($("#SelectedLeague").val($("#selid option:selected")))
+                     
+                });
+            });
+    </script>*@
+@*<script type="text/javascript">
+            $(window).load(function () {
+                $(".btn btn-success").on('click',function(){
+                    alert("hey team");
+                })
+                });
+            
+    </script>*@
+@*<script>
+    $(document).ready(function (){
+        $('.text-center').hover(function () {
+            $(this).toggleClass('blue');
+        });
+    });
+</script>*@
+
+
+@*<script type="text/javascript">
+    $(init);
+
+    function init()
+    {
+        $("#bordertest").hover(border, noBorder);
+    }
+    // end init
+
+ function border(){
+  $(this).css("border", "1px solid black");
+ }
+ function noBorder(){
+  $(this).css("border", "0px none black");
+ }
+</script>*@
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#test1").hover(function () {
+            $(this).toggleClass("modal-content");
+        });
+    });
+
+
+</script>
+
+<script>
+    //$(document).ready(function () {
+
+    //    $("#someid").live("click", function () {
+    //        if ($("#selid").val()=='Select League') 
+    //        {
+    //            alert("Please select");
+    //        }
+    //    });
+    //})
+
+    $(document).ready(function () {
+        $('[id^="someid_"]').click(function () {
+
+            var books = $('#selid');
+            if (books.val() === '')
+            {
+                alert("Please select League from the dropdown list and then proceed!");
+                $('#selid').focus();
+                return false;
+            }
+            else return true;
+        });
+    });
+
+    
+    //var somefunction = function ()
+    //{
+    //    $("#someid",function()
+    //    {
+    //        var books = $('#selid');
+    //        if (books.val() === '') {
+    //            alert("Please select League from the dropdown list and then proceed!");
+    //            $('#selid').focus();
+    //            return false;
+    //        }
+    //        else return true;
+    //    });
+    // }
+    
+</script>
+
+

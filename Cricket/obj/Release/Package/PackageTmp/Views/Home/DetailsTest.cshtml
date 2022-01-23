@@ -1,0 +1,218 @@
+﻿@model IEnumerable<Cricket.Models.DetailModel>
+
+@{
+    ViewBag.Title = "DetailsTest";
+    
+}
+
+<h1 class="alert-info">@ViewBag.leagueselectedname League<br>Team @ViewBag.teamname Players</h1>
+
+<div>
+    @Html.ActionLink("Add a Player", "AddPlayer",new { }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Add a Match Record", "AddMatch",new { }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("View Player Record", "RecordViewTest", new { id = ViewBag.TeamId },new { @class="btn btn-primary"})
+</div>
+<h2><b>Wicket Keeper</b></h2>
+<table class="table table-striped">
+    
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.PlayerName)</th>
+        <th>@Html.DisplayNameFor(model => model.MatchesPlayed)</th>
+        <th>@Html.DisplayNameFor(model => model.MaxRuns)</th>
+        <th>@Html.DisplayNameFor(model => model.AvgSR)</th>
+        <th>@Html.DisplayNameFor(model => model.Review)</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 4)
+        {
+            <tr>
+                <td width="150">@Html.DisplayFor(model => item.PlayerName)</td>
+                <td width="150">@Html.DisplayFor(model => item.MatchesPlayed)</td>
+                <td width="150">@Html.DisplayFor(model => item.MaxRuns)</td>
+                <td width="150">@Html.DisplayFor(model => item.AvgSR)</td>
+                <td width="150">@Html.DisplayFor(model => item.Review)</td>
+                <td width="150">
+                    <a href="#" class="btn btn-success"
+                       onclick="ShowPlayer(@item.PlayerId,@item.CategoryId)">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                    </a>
+                </td>
+                <td width="150">
+                    <a href="#" class="btn btn-danger"
+                       onclick="DeletePlayer(@item.PlayerId)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<h2><b>Batsmen</b></h2>
+    <table class="table table-striped">
+        
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.PlayerName)</th>
+                <th>@Html.DisplayNameFor(model => model.MatchesPlayed)</th>
+                <th>@Html.DisplayNameFor(model => model.MaxRuns)</th>
+                <th>@Html.DisplayNameFor(model => model.AvgSR)</th>
+                <th>@Html.DisplayNameFor(model => model.Review)</th>
+                <th></th>
+                <th></th>
+            </tr>
+        
+@foreach (var item in Model)
+{
+    if (item.CategoryId == 1)
+    {
+    <tr>
+        <td width="150">@Html.DisplayFor(model => item.PlayerName)</td>
+        <td width="150">@Html.DisplayFor(model => item.MatchesPlayed)</td>
+        <td width="150">@Html.DisplayFor(model => item.MaxRuns)</td>
+        <td width="150">@Html.DisplayFor(model => item.AvgSR)</td>
+        <td width="150">@Html.DisplayFor(model => item.Review)</td>
+        <td width="150">
+            <a href="#" class="btn btn-success"
+               onclick="ShowPlayer(@item.PlayerId,@item.CategoryId)">
+                <i class="glyphicon glyphicon-eye-open"></i>
+            </a>
+        </td>
+        <td width="150">
+            <a href="#" class="btn btn-danger"
+               onclick="DeletePlayer(@item.PlayerId)">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
+        </td>
+    </tr>
+    }
+}
+    </table>
+<h2><b>Bowlers</b></h2>
+<table class="table table-striped">
+    
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.PlayerName)</th>
+        <th>@Html.DisplayNameFor(model => model.MatchesPlayed)</th>
+        <th>@Html.DisplayNameFor(model => model.MaxWickets)</th>
+        <th>@Html.DisplayNameFor(model => model.AvgER)</th>
+        <th>@Html.DisplayNameFor(model => model.Review)</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 3)
+        {
+            <tr>
+                <td width="150">@Html.DisplayFor(model => item.PlayerName)</td>
+                <td width="150">@Html.DisplayFor(model => item.MatchesPlayed)</td>
+                <td width="150">@Html.DisplayFor(model => item.MaxWickets)</td>
+                <td width="150">@Html.DisplayFor(model => item.AvgER)</td>
+                <td width="150">@Html.DisplayFor(model => item.Review)</td>
+                <td width="150">
+                    <a href="#" class="btn btn-success"
+                       onclick="ShowPlayer(@item.PlayerId,@item.CategoryId)">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                    </a>
+                </td>
+                <td width="150">
+                    <a href="#" class="btn btn-danger"
+                       onclick="DeletePlayer(@item.PlayerId)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<h2><b>All Rounders</b></h2>
+<table class="table table-striped">
+
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.PlayerName)</th>
+        <th>@Html.DisplayNameFor(model => model.MatchesPlayed)</th>
+        <th>@Html.DisplayNameFor(model => model.MaxRuns)</th>
+        <th>@Html.DisplayNameFor(model => model.AvgSR)</th>
+        <th>@Html.DisplayNameFor(model => model.MaxWickets)</th>
+        <th>@Html.DisplayNameFor(model => model.AvgER)</th>
+        <th>@Html.DisplayNameFor(model => model.Review)</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 2)
+        {
+            <tr>
+                <td width="150">@Html.DisplayFor(model => item.PlayerName)</td>
+                <td width="150">@Html.DisplayFor(model => item.MatchesPlayed)</td>
+                <td width="150">@Html.DisplayFor(model => item.MaxRuns)</td>
+                <td width="150">@Html.DisplayFor(model => item.AvgSR)</td>
+                <td width="150">@Html.DisplayFor(model => item.MaxWickets)</td>
+                <td width="150">@Html.DisplayFor(model => item.AvgER)</td>
+                <td width="150">@Html.DisplayFor(model => item.Review)</td>
+                <td width="150">
+                    <a href="#" class="btn btn-success"
+                       onclick="ShowPlayer(@item.PlayerId,@item.CategoryId)">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                    </a>
+                </td>
+                <td width="150">
+                    <a href="#" class="btn btn-danger"
+                       onclick="DeletePlayer(@item.PlayerId)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h3 class="modal-title">Player Top 3 Records</h3>
+            </div>
+
+            <div class="modal-body" id="myModalBodyDiv">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var ShowPlayer = function (Playerid,Categoryid)
+    {
+        //var url="/Home/ShowPlayer?playerid="+Playerid;
+        //$("#myModalBodyDiv").load(url,function(){
+        //    $("#myModal").modal("show")
+        //})
+        $.ajax({
+
+            type: "post",
+            url: "/home/showplayer",
+            data:{playerid: Playerid,categoryid:Categoryid},
+            success:function(response)
+            {
+                $("#myModalBodyDiv").html(response);
+                $("#myModal").modal("show");
+            }
+        })
+    }
+    
+
+</script>

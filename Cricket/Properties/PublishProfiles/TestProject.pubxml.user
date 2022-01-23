@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\PublishCode</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 08:43:40</publishTime>
+    </File>
+    <File Include="bin/Cricket.dll">
+      <publishTime>05/28/2018 12:08:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/23/2012 15:23:58</publishTime>
+    </File>
+    <File Include="bin/System.Data.Linq.dll">
+      <publishTime>11/05/2015 20:36:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/10/2013 17:28:38</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>05/27/2018 12:19:07</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>05/27/2018 12:21:57</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/12/2018 18:53:55</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/12/2018 22:46:18</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/12/2018 22:46:23</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/12/2018 22:46:23</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/12/2018 22:46:23</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/12/2018 22:46:23</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/12/2018 22:46:18</publishTime>
+    </File>
+    <File Include="Models/Crick.dbml">
+      <publishTime>04/30/2018 22:45:19</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/12/2018 22:46:23</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/12/2018 22:46:23</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>04/12/2018 22:46:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>04/12/2018 22:46:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>04/12/2018 22:46:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/12/2018 22:46:28</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>04/12/2018 22:46:29</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>04/12/2018 22:46:28</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>04/12/2018 22:46:18</publishTime>
+    </File>
+    <File Include="Views/Home/AddMatch.cshtml">
+      <publishTime>05/06/2018 21:05:47</publishTime>
+    </File>
+    <File Include="Views/Home/AddPlayer.cshtml">
+      <publishTime>04/27/2018 13:03:11</publishTime>
+    </File>
+    <File Include="Views/Home/AddTest.cshtml">
+      <publishTime>04/30/2018 22:27:14</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>04/12/2018 22:46:18</publishTime>
+    </File>
+    <File Include="Views/Home/Create.cshtml">
+      <publishTime>04/15/2018 19:31:13</publishTime>
+    </File>
+    <File Include="Views/Home/Details.cshtml">
+      <publishTime>05/21/2018 16:59:37</publishTime>
+    </File>
+    <File Include="Views/Home/DetailsTest.cshtml">
+      <publishTime>05/27/2018 12:33:06</publishTime>
+    </File>
+    <File Include="Views/Home/mytest.cshtml">
+      <publishTime>05/26/2018 21:33:32</publishTime>
+    </File>
+    <File Include="Views/Home/RecordPlayerPartialView.cshtml">
+      <publishTime>05/22/2018 22:57:17</publishTime>
+    </File>
+    <File Include="Views/Home/RecordView.cshtml">
+      <publishTime>05/13/2018 08:38:40</publishTime>
+    </File>
+    <File Include="Views/Home/RecordViewTest.cshtml">
+      <publishTime>05/26/2018 16:57:29</publishTime>
+    </File>
+    <File Include="Views/Home/ShowPlayer.cshtml">
+      <publishTime>05/25/2018 14:03:21</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/06/2018 20:34:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/20/2018 13:16:47</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>04/15/2018 12:57:19</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>04/12/2018 22:46:18</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/28/2018 12:08:24</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

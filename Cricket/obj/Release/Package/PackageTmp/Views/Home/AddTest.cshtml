@@ -1,0 +1,55 @@
+﻿@model Cricket.Models.MatchDetail_PlayerDetail_Model
+
+@{
+    ViewBag.Title = "AddTest";
+}
+
+<h2>AddTest</h2>
+
+
+<div class="col-md-10">
+    @Html.DropDownListFor(model => model.SelectedTeamId, new SelectList(Model.TeamCollection, "TeamId", "TeamName"), "opponent Team")
+    @Html.ValidationMessageFor(model => model.SelectedTeamId, "", new { @class = "text-danger" })
+</div>
+<div>
+    @Html.EditorFor(model => Model.Venue, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+
+<table class="table">
+    <tr>
+
+        <th>Player Name</th>
+        <th>Runs</th>
+        
+        <th>Wickets</th>
+        
+    </tr>
+    @using (Html.BeginForm(null, null, FormMethod.Post))
+    {
+        
+            for (int i = 0; i < Model.PlayerScoringCollection.Count(); i++)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.PlayerScoringCollection[i].PlayerName);
+                </td>
+
+                <td>
+                    @Html.EditorFor(model => model.PlayerScoringCollection[i].PlayerRun, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+                
+                <td>
+                    @Html.EditorFor(model => model.PlayerScoringCollection[i].PlayerWicket, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+               
+            </tr>
+            }
+
+        <tr><td><input type="submit" value="Add Players Records" class="btn btn-default"></td></tr>
+        
+    }
+</table>
+
+
+
+

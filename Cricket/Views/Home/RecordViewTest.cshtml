@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+@model Cricket.Models.MatchPlayerRecordDisplay
+
+@{
+    ViewBag.Title = "RecordViewTest";
+}
+
+
+<table class="testclass" border="1" width=430 style="display: inline-block; border: 1px solid; 
+float: left; tab-size:initial; margin-top:50px; margin-left:30px;">
+    <thead>
+    <tr height="50" >
+        <th rowspan="2" width="150" >PlayerName</th>
+       @foreach(var matchdetail in Model.MatchDetailModel)
+       {
+           if(matchdetail.MatchId==ViewBag.matchids[0])
+           {
+               <th colspan="5">
+        Vs: @matchdetail.TeamBName | Venue: @matchdetail.Venue | <br>Date: @matchdetail.MatchDate.ToShortDateString() 
+               </th>
+           }
+
+       }
+    </tr>
+    <tr>
+        <th width="60">Runs</th>
+        <th width="60">SR</th>
+        <th width="60">Wickets</th>
+        <th width="60">ER</th>
+        <th width="60">Overs</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PlyerInfoModel)
+            {
+            <tr id = "playername_@item.PlayerId" class="">
+                <td onmouseover="playerfunction(playername_@item.PlayerId)">
+                @*<td>*@
+
+                 @Html.DisplayFor(model => item.PlayerName)</td>
+                @foreach (var inneritem in Model.PlayerDetailModel)
+                {
+                    if (item.PlayerId == inneritem.PlayerId && inneritem.MatchId==ViewBag.matchids[0])
+                    {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerRun)</td>
+                            <td>@Html.DisplayFor(model => inneritem.SR)</td>
+                        if (inneritem.CategoryId == 2 || inneritem.CategoryId == 3)
+                        {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerWickets)</td>
+                            <td>@Html.DisplayFor(model => inneritem.ER)</td>
+                            <td>@Html.DisplayFor(model => inneritem.Overs) </td>
+                        }
+                        else
+                        {
+                            @*<td>@Html.Display("NA")</td>
+                            <td>@Html.Display("NA")</td>
+                            <td>@Html.Display("NA") </td>*@
+                            <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        }
+                    }
+                }
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
+@for (int j = 1; j < (ViewBag.matchids.Count); j++)
+{
+    
+<table class="testclass" border="1" width="304" style="display: inline-block; border: 1px solid; tab-size:initial; margin-top:50px; float:left;  ">
+    <thead>
+        <tr height="50">
+            
+            @foreach (var matchdetail in Model.MatchDetailModel)
+            {
+                if (matchdetail.MatchId == ViewBag.matchids[j])
+                {
+                    <th colspan="5">
+                        Vs: @matchdetail.TeamBName | Venue: @matchdetail.Venue | <br>Date: @matchdetail.MatchDate.ToShortDateString()
+                    </th>
+                }
+
+            }
+
+        </tr>
+        <tr>
+            <th width="60">Runs</th>
+            <th width="60">SR</th>
+            <th width="60">Wickets</th>
+            <th width="60">ER</th>
+            <th width="60">Overs</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PlyerInfoModel)
+        {
+            <tr>
+                @*<td> @Html.DisplayFor(model => item.PlayerName)</td>*@
+                @foreach (var inneritem in Model.PlayerDetailModel)
+                {
+                    if (item.PlayerId == inneritem.PlayerId && inneritem.MatchId == ViewBag.matchids[j])
+                    {
+
+                        <td>@Html.DisplayFor(model => inneritem.PlayerRun)</td>
+                        <td>@Html.DisplayFor(model => inneritem.SR)</td>
+                        if (inneritem.CategoryId == 2 || inneritem.CategoryId == 3)
+                        {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerWickets)</td>
+                            <td>@Html.DisplayFor(model => inneritem.ER)</td>
+                            <td>@Html.DisplayFor(model => inneritem.Overs) </td>
+                        }
+                        else
+                        {
+                            @*<td>@Html.Display("NA")</td>
+                              <td>@Html.Display("NA")</td>
+                              <td>@Html.Display("NA") </td>*@
+                            <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
+                        }
+                    }
+                }
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+<script>
+
+    //$(document).ready(function () {
+    //    $('[id^="playername_"]').hover(function () {
+    //        $('[id^="playerid_"],[id^="table1_"]').toggleClass("modal-content");
+    //    });
+    //$('.testclass tr').hover(function()
+    //{
+    //    $(this).addClass('modal-content');
+    //},function()
+    //{
+    //    $(this).removeClass('modal-content');
+    //});
+    //});
+    //-------------------------------main----------------------
+    $(document).ready(function(){
+
+
+        var $trs = $('table.testclass tr:not(:nth-child(0)');
+        $trs.hover(
+            function() {
+                var i = $(this).index() + 1;
+                $trs.filter(':nth-child(' + i + ')').addClass('modal-content');
+            },
+            function() {
+                var i = $(this).index() + 1;
+                $trs.filter(':nth-child(' + i + ')').removeClass('modal-content');
+            }
+        );
+    });
+    //-------------------------------------------------------------
+    //function playerfunction(playername)
+    //{
+    //    //$('#' + playername).hover(function()
+        //{
+            ////debugger;
+            //var helpid=$('#'+playername).attr('id');
+            //var rowid=helpid.replace('playername_','playerid_');
+            //$('#' + playername).find('td').toggleClass("modal-content");
+            //$("'#' + playername td").css({ "background-color": "yellow" })
+            //$("[id = playername]").toggleClass("modal-content");
+        //});
+        //var table2=$('#'+playername).replace('playername','table2');
+            //$('#' + playername).toggleClass("modal-content");
+            
+            //var table = $('#example').DataTable();
+            //var row = table.row('#row-42');
+        
+      //  }
+        
+    //$(document).ready(function() {
+    //    $("table.testclass tr:not(:first-child)").each(function(k, v){
+    //        var self = this;
+    //        // index: 0 = second row; 1= 3rd row... of table#names 
+    //        // index+1 for other table's row: .find('tr.row'+(index+1))
+    //        (function(index){ 
+    //            $(self).hover(
+    //                function() {
+    //                    $(this).addClass("modal-content");                
+
+    //                    // go up to parent div of #names, then its siblings, then the siblings' table's row
+    //                    // you could also just $('table#results')
+    //                    $('table.testclass').siblings().find('tr.row'+(index+1)).addClass("modal-content");
+    //                }, function() {
+    //                    $('table.testclass').siblings().find('tr.row'+(index+1)).removeClass("highlight");
+    //                    $(this).removeClass("modal-content");
+    //                }
+    //            );
+    //        })(k); // pass index so function above remembers it
+    //    });
+    //});
+
+</script>
+@*@Html.Action("DetailsTest",)*@
+
+
+
+
+

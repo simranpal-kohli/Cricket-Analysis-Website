@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Cricket.Models.PlayerInfo_League_CategoryModel>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h1>@ViewBag.leagueselectedname League</h1>
+<h2>Team @ViewBag.teamname Players</h2>
+<div>
+@Html.ActionLink("Add a Player", "AddPlayer") | 
+@Html.ActionLink("Add a Match Record", "AddMatch") |
+@Html.ActionLink("View Player Record","RecordViewTest")
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.EmpId)
+            </th>*@
+
+        <th></th>
+    </tr>
+    
+    <tr><td></td> 
+        <td>
+    <h3><b>Wicket Keeper</b></h3>
+            </td><td></td> 
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 4)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerName)
+            </td>    
+            <td> @Html.DisplayFor(modelItem => item.CategoryName) </td> <td></td>     
+        </tr>
+        }
+    }
+    <tr><td></td> 
+        <td><h3>
+            <b>
+    Batsmen</b></h3>
+            </td><td></td> 
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 1)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerName)
+                </td> <td>
+                @Html.DisplayFor(modelItem => item.CategoryName) </td> <td></td> 
+            </tr>
+        }
+    }
+    <tr> <td></td> <td><h3><b>All Rounder</b></h3></td><td></td> </tr>
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 2)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerName)
+                </td> <td>@Html.DisplayFor(modelItem => item.CategoryName) </td> <td></td> 
+            </tr>
+        }
+    }
+    <tr><td></td> <td><h3><b>Bowler</b></h3></td><td></td> </tr>
+    @foreach (var item in Model)
+    {
+        if (item.CategoryId == 3)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerName)
+                </td> <td>@Html.DisplayFor(modelItem => item.CategoryName) </td> <td></td> 
+            </tr>
+        }
+    }
+
+
+</table>
+
+
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerId }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

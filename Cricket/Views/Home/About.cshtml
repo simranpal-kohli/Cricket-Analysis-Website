@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2 class="modal-body">@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<h1 id="test1" style="display: inline-block; border: 1px solid;" class="progress-striped">hey people</h1>
+
+<p id="test">Use this area to provide additional information.</p>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+
+        $("#test1").hover(function ()
+        {
+            $(this).toggleClass("modal-content");
+        });
+    });
+
+    //});
+    //$(document).ready(function ($) {
+        //$('#test1').hover(
+        //     function () { $(this).addClass('modal-content') },
+        //     function () { $(this).removeClass('modal-content') }
+        //)
+
+        //$("h1").mouseover(function () {
+        //    $(this).css("color", "blue");
+        //})
+    //});
+</script>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cricket" Class="CrickDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LIN17000714\SQLEXPRESS;Initial Catalog=Cricket;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CricketConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PlayerDetail" Member="PlayerDetails">
+    <Type Name="PlayerDetail">
+      <Column Name="PlayerInfoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MatchId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlayerRun" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SR" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="PlayerWickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Overs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ER" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="Review" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="MatchDetail_PlayerDetail" Member="MatchDetail" ThisKey="MatchId" OtherKey="MatchId" Type="MatchDetail" IsForeignKey="true" />
+      <Association Name="CategoryDetail_PlayerDetail" Member="CategoryDetail" ThisKey="CategoryId" OtherKey="CategoryId" Type="CategoryDetail" IsForeignKey="true" />
+      <Association Name="PlayerInfo_PlayerDetail" Member="PlayerInfo" ThisKey="PlayerId" OtherKey="PlayerId" Type="PlayerInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MatchDetail" Member="MatchDetails">
+    <Type Name="MatchDetail">
+      <Column Name="MatchId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeamAId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamBId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Venue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatchDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LeagueId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MatchDetail_PlayerDetail" Member="PlayerDetails" ThisKey="MatchId" OtherKey="MatchId" Type="PlayerDetail" />
+      <Association Name="LeagueDetail_MatchDetail" Member="LeagueDetail" ThisKey="LeagueId" OtherKey="LeagueId" Type="LeagueDetail" IsForeignKey="true" />
+      <Association Name="TeamDetail_MatchDetail" Member="TeamDetail" ThisKey="TeamAId" OtherKey="TeamId" Type="TeamDetail" IsForeignKey="true" />
+      <Association Name="TeamDetail_MatchDetail1" Member="TeamDetail1" ThisKey="TeamBId" OtherKey="TeamId" Type="TeamDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LeagueDetail" Member="LeagueDetails">
+    <Type Name="LeagueDetail">
+      <Column Name="LeagueId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LeagueName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LeagueDetail_MatchDetail" Member="MatchDetails" ThisKey="LeagueId" OtherKey="LeagueId" Type="MatchDetail" />
+      <Association Name="LeagueDetail_PlayerInfo" Member="PlayerInfos" ThisKey="LeagueId" OtherKey="LeagueId" Type="PlayerInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CategoryDetail" Member="CategoryDetails">
+    <Type Name="CategoryDetail">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CategoryDetail_PlayerDetail" Member="PlayerDetails" ThisKey="CategoryId" OtherKey="CategoryId" Type="PlayerDetail" />
+      <Association Name="CategoryDetail_PlayerInfo" Member="PlayerInfos" ThisKey="CategoryId" OtherKey="CategoryId" Type="PlayerInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlayerInfo" Member="PlayerInfos">
+    <Type Name="PlayerInfo">
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlayerName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LeagueId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PlayerInfo_PlayerDetail" Member="PlayerDetails" ThisKey="PlayerId" OtherKey="PlayerId" Type="PlayerDetail" />
+      <Association Name="CategoryDetail_PlayerInfo" Member="CategoryDetail" ThisKey="CategoryId" OtherKey="CategoryId" Type="CategoryDetail" IsForeignKey="true" />
+      <Association Name="LeagueDetail_PlayerInfo" Member="LeagueDetail" ThisKey="LeagueId" OtherKey="LeagueId" Type="LeagueDetail" IsForeignKey="true" />
+      <Association Name="TeamDetail_PlayerInfo" Member="TeamDetail" ThisKey="TeamId" OtherKey="TeamId" Type="TeamDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TeamDetail" Member="TeamDetails">
+    <Type Name="TeamDetail">
+      <Column Name="TeamId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Flag" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TeamDetail_MatchDetail" Member="MatchDetails" ThisKey="TeamId" OtherKey="TeamAId" Type="MatchDetail" />
+      <Association Name="TeamDetail_MatchDetail1" Member="MatchDetails1" ThisKey="TeamId" OtherKey="TeamBId" Type="MatchDetail" />
+      <Association Name="TeamDetail_PlayerInfo" Member="PlayerInfos" ThisKey="TeamId" OtherKey="TeamId" Type="PlayerInfo" />
+    </Type>
+  </Table>
+</Database>

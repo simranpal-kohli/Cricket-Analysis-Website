@@ -1,0 +1,74 @@
+﻿@model Cricket.Models.MatchPlayerRecordDisplay
+
+@{
+    ViewBag.Title = "RecordView";
+}
+
+<h2>RecordView</h2>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                @for (int j = 0; j < ViewBag.matchids.Count; j++)
+                {
+                    <th>
+                        <table>
+                          
+                            <tr>
+                                <th>matchvs</th>
+                                <th>venue</th>
+                                <th>Date</th>
+                                
+                            </tr>
+                            <tr>
+                                <th>Runs</th>
+                                <th>SR</th>
+                                <th>Wickets</th>
+                                <th>ER</th>
+                                <th>Overs</th>
+                            </tr>
+                        </table>
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PlyerInfoModel)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(model => item.PlayerName)</td>
+                    <td>
+                        <table>
+                            <tr>
+                    @foreach (var inneritem in Model.PlayerDetailModel)
+                    {
+                        if (item.PlayerId == inneritem.PlayerId)
+                        {
+                            <td>@Html.DisplayFor(model => inneritem.PlayerRun)</td>
+                            <td>@Html.DisplayFor(model => inneritem.SR)</td>
+                            <td>@Html.DisplayFor(model => inneritem.PlayerWickets)</td>
+                            <td>@Html.DisplayFor(model => inneritem.ER)</td> 
+                            <td>@Html.DisplayFor(model => inneritem.Overs) </td>
+                        }
+                    }
+                                </tr>
+                            </table>
+                    </td>   
+                </tr>
+
+            }
+
+
+
+
+            
+        </tbody>
+</table>
+}
+
+
+

@@ -1,0 +1,53 @@
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\Cricket.dll.config
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\Cricket.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\Cricket.pdb
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\Antlr3.Runtime.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\Microsoft.Web.Infrastructure.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Helpers.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Mvc.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Optimization.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Razor.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.WebPages.Deployment.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.WebPages.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.WebPages.Razor.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\WebGrease.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Helpers.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Mvc.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Optimization.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.Razor.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.WebPages.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.WebPages.Deployment.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Web.WebPages.Razor.xml
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\Antlr3.Runtime.pdb
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\obj\Debug\Cricket.csprojResolveAssemblyReference.cache
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\obj\Debug\Cricket.dll
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\obj\Debug\Cricket.pdb
+d:\users\sikohli\documents\visual studio 2015\Projects\Cricket\Cricket\bin\System.Data.Linq.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Cricket.dll.config
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Cricket.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Cricket.pdb
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Antlr3.Runtime.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Microsoft.Web.Infrastructure.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Newtonsoft.Json.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Data.Linq.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Helpers.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Mvc.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Optimization.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Razor.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.WebPages.Deployment.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.WebPages.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.WebPages.Razor.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\WebGrease.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Helpers.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Mvc.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Optimization.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.Razor.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.WebPages.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.WebPages.Deployment.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\System.Web.WebPages.Razor.xml
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\bin\Antlr3.Runtime.pdb
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\obj\Debug\Cricket.csprojAssemblyReference.cache
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\obj\Debug\Cricket.csproj.CoreCompileInputs.cache
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\obj\Debug\Cricket.csproj.CopyComplete
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\obj\Debug\Cricket.dll
+D:\My_Notes\Visual_Codes\Projects\Cricket\Cricket\obj\Debug\Cricket.pdb
